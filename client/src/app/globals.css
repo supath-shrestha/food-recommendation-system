@@ -1,0 +1,542 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --text-color-light: rgba(0, 0, 0, 0.7);
+  --text-color-dark: #ededed;
+  --primary-color: #f7be27;
+  --secondary-color: #642f21;
+  --accent-color: #e3000e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #f8ecc4; */
+    --background: #f9f5f0;
+    --foreground: #1a4e83;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Poppins", sans-serif;
+  min-height: 100svh;
+}
+
+/* Utility Classes */
+.text-y {
+  color: var(--primary-color) !important;
+}
+
+.text-brown {
+  color: var(--secondary-color);
+}
+
+/* Typography */
+p {
+  font-size: 20px;
+  color: var(--text-color-light);
+  font-weight: 400;
+}
+
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+/* Container */
+.container {
+  max-width: 1280px !important;
+  width: 1280px !important;
+}
+
+/* Header */
+header .logo {
+  width: 200px;
+}
+
+header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+header.scroll {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(30px);
+}
+
+header nav ul li a {
+  /* color: #fff; */
+  /* color: #9c9797; */
+  /* color: var(--primary-color); */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+header.scroll nav ul li a {
+  color: #000;
+}
+
+header nav ul li a:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+header.scroll nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+header .cartTab svg {
+  font-size: 35px;
+}
+
+header.scroll .cartTab svg {
+  color: #000;
+}
+
+header .cartTab span {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* Buttons */
+.btn-border {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.8);
+  padding: 6px 25px;
+}
+
+header .btn-border {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 6px 25px;
+  font-weight: 600;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+  transition: all 0.3s ease;
+  /* Smooth transition */
+}
+
+.no-radius {
+  border-radius: 0;
+}
+
+.bg-brown {
+  background-color: var(--secondary-color);
+}
+
+.bg-y {
+  background-color: var(--primary-color);
+}
+
+.btn-lg {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.btn-red {
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  color: #fff;
+  padding: 2px 15px;
+}
+
+.btn-red-1 {
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  color: #fff;
+}
+
+.btn-red:hover {
+  background: transparent;
+  color: var(--accent-color);
+}
+
+.btn-red-1:hover {
+  transition: 0.2s all ease-in-out;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.category-swiper .swiper-wrapper {
+  justify-content: center;
+  /* gap: 1rem; */
+}
+
+.category-swiper .swiper-slide .active img {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-swiper .swiper-slide .active img {
+  color: #fff;
+}
+
+.category-swiper .swiper-slide .active h4 {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.category-swiper .swiper-slide {
+  padding: 2px;
+}
+
+.list-inline li img {
+  opacity: 0.4;
+}
+
+.filterProducts {
+  padding-bottom: 30px;
+}
+
+.filterProducts .list-inline h4 {
+  color: #1b1b1b;
+}
+
+/* Product List */
+/* .foodList .foodItem {
+  width: 22% !important;
+} */
+
+/* .foodItem .imgWrapper img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s;
+  border-top-right-radius: 10px;
+}
+
+.foodItem .imgWrapper {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.foodItem .imgWrapper .MuiCheckbox-root {
+  color: var(--accent-color);
+}
+
+.foodItem .info {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  font-size: 20px;
+  color: var(--secondary-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.foodItem .info h4 {
+  font-size: 20px;
+  color: var(--secondary-color);
+}
+
+.foodItem .info button {
+  padding: 7px 20px;
+  color: var(--secondary-color);
+  font-weight: 600;
+  border: 1px solid var(--secondary-color);
+}
+
+.foodItem .info button:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+} */
+
+/* Banner */
+.banner {
+  padding: 40px 0;
+  background-size: cover;
+}
+
+.banner h2 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+/* Services Section */
+.services {
+  @apply py-16 bg-yellow-300;
+}
+
+.services .box {
+  @apply p-6 text-center transition-all duration-300;
+}
+
+.services h3 {
+  @apply text-2xl font-semibold text-brown mt-3 mb-2;
+}
+
+.services p {
+  @apply text-base text-gray-900 leading-relaxed;
+}
+
+/* Product Items */
+
+.foodItem {
+  @apply overflow-hidden;
+}
+
+.imgWrapper {
+  @apply relative p-5;
+}
+
+.wishlist {
+  @apply absolute top-2 right-2 z-10;
+}
+
+.price {
+  @apply text-lg font-bold bg-yellow-400 text-white px-3 py-1;
+}
+
+.ratingWrapper {
+  @apply flex items-center justify-between mt-3;
+}
+
+.rating {
+  @apply text-gray-600;
+}
+
+.info {
+  @apply p-4 text-center;
+}
+
+.productTitle {
+  @apply text-xl font-semibold text-gray-900;
+}
+
+.productDescription {
+  @apply text-gray-500 mt-2 mb-3 text-base;
+}
+
+.addToCartButton {
+  @apply text-white py-2 px-4 transition-all duration-200;
+}
+
+.banner {
+  @apply py-20 bg-[#fdefc7] text-center;
+  /* Adjust padding and background */
+}
+
+.info1 {
+  @apply w-[90%] sm:w-[75%] md:w-[60%] m-auto;
+}
+
+h2 {
+  @apply text-4xl sm:text-5xl font-semibold text-brown mb-4;
+}
+
+/* p {
+  @apply text-lg sm:text-sm text-gray-700 mb-8 leading-relaxed;
+} */
+
+.btn-red {
+  @apply bg-[#e3000e] text-white py-2 px-6 font-semibold text-lg transition duration-300 ease-in-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .banner {
+    padding: 30px 0;
+    /* Less padding on smaller screens */
+  }
+
+  h2 {
+    font-size: 2rem;
+    /* Smaller heading on mobile */
+  }
+
+  p {
+    font-size: 1rem;
+    /* Smaller text on mobile */
+  }
+}
+
+/* menu */
+
+.menu {
+  padding: 30px 0px;
+  /* background-color: #f7be27; */
+}
+
+.menu h2 {
+  color: #e3000e;
+  text-transform: uppercase;
+}
+
+.foodItem_1 {
+  /* @apply bg-amber-50; */
+}
+
+.foodItem2 .imgWrapper img {
+  transition: all 0.5s;
+}
+
+.foodItem2:hover .imgWrapper img {
+  transform: scale(1.05);
+}
+
+.foodListing {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.recommend h2 {
+  margin-bottom: 30px;
+}
+
+.category img {
+  @apply rounded-full;
+}
+
+.category .relative {
+  position: relative;
+}
+
+.category .overlay-text {
+  @apply absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 text-white text-[15px] opacity-0 hover:opacity-100 transition-opacity duration-300;
+}
+
+.category {
+  @apply p-2.5;
+}
+
+.contact-container {
+  @apply max-w-xl mx-auto p-8 rounded-xl my-10;
+}
+
+.contact-heading {
+  @apply text-3xl font-semibold text-center mb-8 text-gray-800;
+}
+
+.contact-input,
+.contact-textarea {
+  @apply mt-2 block w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition duration-300 ease-in-out;
+}
+
+.contact-button {
+  @apply w-full px-6 py-3 mt-5 bg-accent text-white font-medium rounded-lg shadow-md transition duration-300 ease-in-out;
+
+  /* Hover effect */
+  @apply hover:bg-transparent hover:border-2 hover:border-accent hover:text-accent;
+}
+
+/* .qtyDrop {
+  width: 200px;
+}
+
+.qtyDrop .action {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.qtyDrop .action svg {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.qty-input {
+  width: 60px;
+  outline: none;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.qtyDrop input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+} */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* food details page  */
+.productSmlSlider .swiper-wrapper{
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.productSmlSlider .swiper-slide{
+  width: 76px !important;
+  height: 76px !important;
+  margin-right: 0px !important;
+}
+
+.smlSlider .item {
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.smlSlider .item.active {
+  border: 1px solid #e3000e;
+}
+
+.tabs .itemTab {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.tabs .itemTab.Mui-selected {
+  color: #000;
+}
+
+.css-1qltlow-MuiTabs-indicator {
+  background-color: #e3000e;
+}
+
+/* Scroll bar track */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 2.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #d2d0d0;
+}
+
+/* Scroll thumb */
+::-webkit-scrollbar-thumb {
+  background: rgb(29 78 216);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+textarea{
+  resize: none !important;
+}
